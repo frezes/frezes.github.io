@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'WhizardTelemetry',
+  tagline: 'WhizardTelemetry are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -60,13 +60,25 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'whizard-docs',
+        path: 'whizard-docs',
+        routeBasePath: 'whizard-docs',
+        sidebarPath: require.resolve('./sidebars.js'),
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'WhizardTelemetry',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -77,6 +89,11 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Tutorial',
+          },
+          {
+            to: '/whizard-docs',
+            label: 'Whizard Docs',
+            position: 'left',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -95,6 +112,10 @@ const config = {
               {
                 label: 'Tutorial',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Whizard Docs',
+                to: '/whizard-docs',
               },
             ],
           },
@@ -129,7 +150,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} WhizardTelemetry. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
